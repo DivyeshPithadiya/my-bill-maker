@@ -17,10 +17,7 @@ import com.billMaker.billSystemProject.TableClasses.Users;
 
 
 
-//class CrossOriginConfig {
-
-
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins="*")
 @RestController
 public class Controller {
 	@Autowired
