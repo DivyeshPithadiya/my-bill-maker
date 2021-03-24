@@ -17,6 +17,7 @@ import com.billMaker.billSystemProject.TableClasses.Users;
 
 
 
+@CrossOrigin(origins="https://my-bill-system.herokuapp.com")
 @RestController
 public class Controller {
 	@Autowired
