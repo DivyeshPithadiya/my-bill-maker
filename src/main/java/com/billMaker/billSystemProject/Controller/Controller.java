@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.billMaker.billSystemProject.Service.ServiceImplementation;
@@ -36,10 +34,7 @@ public class Controller {
 	// ========================================================
 
 	// Get Details Of User After Login
-	@RequestMapping(value = "/user-details/{email}/{password}", 
-			  produces = "application/json", 
-			  method=RequestMethod.POST)
-	//@PostMapping()
+	@PostMapping("/user-details/{email}/{password}")
 	public Users allDetails(@PathVariable String email, @PathVariable String password) {
 		return this.s.getUser(email, password);
 	}
