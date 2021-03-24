@@ -17,7 +17,6 @@ import com.billMaker.billSystemProject.TableClasses.Users;
 
 
 
-@CrossOrigin(origins="https://my-bill-system.herokuapp.com")
 @RestController
 public class Controller {
 	@Autowired
@@ -46,7 +45,7 @@ public class Controller {
 
 	// Get Response That this User is present in Database or not
 
-	@GetMapping("/user-auth/{email}/{password}")
+	@PostMapping("/user-auth/{email}/{password}")
 	public Long Response(@PathVariable String email, @PathVariable String password) {
 		return Long.valueOf(this.s.getAuthResponse(email, password));
 	}
