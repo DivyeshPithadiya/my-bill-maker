@@ -3,7 +3,6 @@ package com.billMaker.billSystemProject.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,14 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.billMaker.billSystemProject.Service.ServiceImplementation;
 import com.billMaker.billSystemProject.TableClasses.Bill_details;
 import com.billMaker.billSystemProject.TableClasses.Users;
 
-@Configuration
-@EnableWebMvc
+
 @RestController
 public class Controller {
 	@Autowired
@@ -38,7 +35,7 @@ public class Controller {
 	// ========================================================
 
 	// Get Details Of User After Login
-	@PostMapping("/user-details/{email}/{password}")
+	@GetMapping("/user-details/{email}/{password}")
 	public Users allDetails(@PathVariable String email, @PathVariable String password) {
 		return this.s.getUser(email, password);
 	}
