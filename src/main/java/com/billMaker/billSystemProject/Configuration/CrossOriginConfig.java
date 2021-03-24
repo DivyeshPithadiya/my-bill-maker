@@ -18,7 +18,7 @@ public class CrossOriginConfig
 	                registry.addMapping("/**")
 	                        .allowedMethods("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
 	                        .allowedHeaders("*")
-	                        .allowedOrigins("*");
+	                        .allowedOrigins("https://my-bill-system.herokuapp.com");
 	            }
 	        };
 	    }

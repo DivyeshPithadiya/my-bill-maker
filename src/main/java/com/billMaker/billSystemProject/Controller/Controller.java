@@ -17,7 +17,6 @@ import com.billMaker.billSystemProject.TableClasses.Users;
 
 
 
-@CrossOrigin(origins="*")
 @RestController
 public class Controller {
 	@Autowired
