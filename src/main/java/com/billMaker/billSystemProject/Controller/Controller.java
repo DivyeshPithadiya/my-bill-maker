@@ -28,7 +28,7 @@ public class Controller {
 
 
 	
-	@PostMapping("/user-details")
+	@PutMapping("/user-details")
 	public Users userDetails(@RequestBody Users user) {
 		return this.s.signUp(user);
 	}
