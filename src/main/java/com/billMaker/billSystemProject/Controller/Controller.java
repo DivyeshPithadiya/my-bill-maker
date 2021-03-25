@@ -16,7 +16,7 @@ import com.billMaker.billSystemProject.TableClasses.Bill_details;
 import com.billMaker.billSystemProject.TableClasses.Users;
 
 
-@CrossOrigin("https://my-bill-system.herokuapp.com/")
+@CrossOrigin(origins ="https://my-bill-system.herokuapp.com", maxAge = 3600)
 @RestController
 public class Controller {
 	@Autowired
