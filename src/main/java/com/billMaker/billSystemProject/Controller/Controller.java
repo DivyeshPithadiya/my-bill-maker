@@ -47,6 +47,7 @@ public class Controller {
 	// Get Response That this User is present in Database or not
 
 	
+	@CrossOrigin(origins ="https://my-bill-system.herokuapp.com", maxAge = 3600)
 	@PostMapping("/user-auth/{email}/{password}")
 	public Long Response(@PathVariable String email, @PathVariable String password) {
 		return Long.valueOf(this.s.getAuthResponse(email, password));
