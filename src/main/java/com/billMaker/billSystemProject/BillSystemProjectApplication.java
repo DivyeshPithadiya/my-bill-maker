@@ -8,7 +8,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@EnableAutoConfiguration
 public class BillSystemProjectApplication {
 
 	public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class BillSystemProjectApplication {
 	      return new WebMvcConfigurer() {
 	         @Override
 	         public void addCorsMappings(CorsRegistry registry) {
-	            registry.addMapping("/*").allowedOrigins("https://my-bill-system.herokuapp.com");
+	            registry.addMapping("/**").allowedOrigins("https://my-bill-system.herokuapp.com");
 	         }
 	      };
 	   }
