@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @SpringBootApplication
-@EnableAutoConfiguration
 @ComponentScan(basePackages={"/billSystemProject/src/main/java/com/billMaker/billSystemProject/Controller/Controller.java"})
 public class BillSystemProjectApplication {
 
