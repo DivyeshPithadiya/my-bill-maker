@@ -36,6 +36,7 @@ public class Controller {
 	// ========================================================
 
 	// Get Details Of User After Login
+
 	@GetMapping("/user-details/{email}/{password}")
 	public Users allDetails(@PathVariable String email, @PathVariable String password) {
 		return this.s.getUser(email, password);
