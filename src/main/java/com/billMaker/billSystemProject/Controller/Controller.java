@@ -28,7 +28,7 @@ public class Controller {
 
 
 	
-	@PutMapping("/user-details")
+	@PostMapping("/user-details")
 	public Users userDetails(@RequestBody Users user) {
 		return this.s.signUp(user);
 	}
@@ -46,9 +46,7 @@ public class Controller {
 
 	// Get Response That this User is present in Database or not
 
-	
-	@CrossOrigin(origins ="https://my-bill-system.herokuapp.com", maxAge = 3600)
-	@PostMapping("/user-auth/{email}/{password}")
+	@GetMapping("/user-auth/{email}/{password}")
 	public Long Response(@PathVariable String email, @PathVariable String password) {
 		return Long.valueOf(this.s.getAuthResponse(email, password));
 	}
@@ -66,7 +64,7 @@ public class Controller {
 
 	// Store Bill Details
 
-	@PostMapping("/bill-details/{vehicle}/{receiver}/{receiver_ad}/{receiver_gst}/{pkg}/{unit}/{booking}/{advance}/{gst}/{total}/{receiver_st}/{userid}")
+	@GetMapping("/bill-details/{vehicle}/{receiver}/{receiver_ad}/{receiver_gst}/{pkg}/{unit}/{booking}/{advance}/{gst}/{total}/{receiver_st}/{userid}")
 	public Integer storeBill(@PathVariable String vehicle, @PathVariable String receiver,
 			@PathVariable String receiver_ad, @PathVariable String receiver_gst, @PathVariable int pkg,
 			@PathVariable int unit, @PathVariable double booking, @PathVariable double advance,
