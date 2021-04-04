@@ -16,7 +16,7 @@ import com.billMaker.billSystemProject.TableClasses.Bill_details;
 import com.billMaker.billSystemProject.TableClasses.Users;
 
 
-@CrossOrigin(origins ="https://my-bill-system.herokuapp.com", maxAge = 3600)
+//@CrossOrigin(origins ="https://my-bill-system.herokuapp.com", maxAge = 3600)
 @RestController
 public class Controller {
 	@Autowired
@@ -27,7 +27,7 @@ public class Controller {
 	// API To Store The Details Of User At the Time Of Signup
 
 
-	
+	@CrossOrigin(origins ="*")
 	@PostMapping("/user-details")
 	public Users userDetails(@RequestBody Users user) {
 		return this.s.signUp(user);
