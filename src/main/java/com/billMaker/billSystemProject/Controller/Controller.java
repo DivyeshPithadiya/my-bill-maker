@@ -37,6 +37,7 @@ public class Controller {
 
 	// Get Details Of User After Login
 
+	@CrossOrigin(origins ="*")
 	@GetMapping("/user-details/{email}/{password}")
 	public Users allDetails(@PathVariable String email, @PathVariable String password) {
 		return this.s.getUser(email, password);
@@ -46,6 +47,7 @@ public class Controller {
 
 	// Get Response That this User is present in Database or not
 
+	@CrossOrigin(origins ="*")
 	@GetMapping("/user-auth/{email}/{password}")
 	public Long Response(@PathVariable String email, @PathVariable String password) {
 		return Long.valueOf(this.s.getAuthResponse(email, password));
@@ -55,6 +57,7 @@ public class Controller {
 
 	// Update User's Details
 
+	@CrossOrigin(origins ="*")
 	@PutMapping("/user-update")
 	public Users updateUser(@RequestBody Users u) {
 		return this.s.updateUser(u);
@@ -64,6 +67,7 @@ public class Controller {
 
 	// Store Bill Details
 
+	@CrossOrigin(origins ="*")
 	@GetMapping("/bill-details/{vehicle}/{receiver}/{receiver_ad}/{receiver_gst}/{pkg}/{unit}/{booking}/{advance}/{gst}/{total}/{receiver_st}/{userid}")
 	public Integer storeBill(@PathVariable String vehicle, @PathVariable String receiver,
 			@PathVariable String receiver_ad, @PathVariable String receiver_gst, @PathVariable int pkg,
@@ -77,7 +81,7 @@ public class Controller {
 	// =========================================================
 	
 	// Delete Bill
-	
+	@CrossOrigin(origins ="*")
 	@DeleteMapping("/delete-bill/{bill_id}")
 	public int deleteBill(@PathVariable int bill_id)
 	{
@@ -87,7 +91,7 @@ public class Controller {
 	// =========================================================
 	
 	//Getting All Bills
-	
+	@CrossOrigin(origins ="*")
 	@GetMapping("/get-all-bills/{user_id}")
 	public List<Bill_details> getAllBills(@PathVariable int user_id)
 	{
@@ -97,7 +101,7 @@ public class Controller {
 	// ==========================================================
 	
 	// Update Bill Details 
-	
+	@CrossOrigin(origins ="*")
 	@PutMapping("/update-bill")
 	public Bill_details updateBill(@RequestBody Bill_details b)
 	{
