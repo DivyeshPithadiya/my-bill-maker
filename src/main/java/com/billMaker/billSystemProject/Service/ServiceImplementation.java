@@ -44,6 +44,7 @@ public class ServiceImplementation implements Services {
 	public Users updateUser(Users u) {
 
 		userDbOperation.save(u);
+		userDbOperation.flush();
 		return u;
 	}
 
@@ -62,6 +63,7 @@ public class ServiceImplementation implements Services {
 		try 
 		{
 			billDbOperation.storeBillDetails(vehicle, receiver, receiver_ad, receiver_gst, pkg, unit, booking, advance, gst, total, receiver_st, userid);	
+			billDbOperation.flush();
 			return 1;
 		}
 		catch(Exception e)
@@ -77,6 +79,7 @@ public class ServiceImplementation implements Services {
 		{	
 			Bill_details b=billDbOperation.getOne(bill_id);
 			billDbOperation.delete(b);
+			billDbOperation.flush();
 			return 1;
 		}
 		catch(Exception e)
@@ -95,6 +98,7 @@ public class ServiceImplementation implements Services {
 	public Bill_details updateBill(Bill_details b) 
 	{
 		billDbOperation.save(b);
+		billDbOperation.flush();
 		return b;
 	}
 
