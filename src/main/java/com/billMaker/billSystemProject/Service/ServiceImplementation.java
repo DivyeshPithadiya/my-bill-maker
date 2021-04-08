@@ -26,7 +26,7 @@ public class ServiceImplementation implements Services {
 	@Override
 	public Users signUp(Users s) {
 		userDbOperation.save(s);
-
+		userDbOperation.flush();
 		return s;
 	}
 
