@@ -33,6 +33,8 @@ public interface Services
 	
 	public Bill_details updateBill(Bill_details b);
 	
+	public Bill_details getBill(int user);
+	
 	//================ Bill Methods ====================//
 	
 	

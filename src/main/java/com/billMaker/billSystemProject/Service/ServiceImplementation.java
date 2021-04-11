@@ -102,6 +102,13 @@ public class ServiceImplementation implements Services {
 		return b;
 	}
 
+	@Override
+	public Bill_details getBill(int user) 
+	{
+		Bill_details b=billDbOperation.getBill(user);
+		return b;
+	}
+
 	
 	
 	

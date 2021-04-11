@@ -108,6 +108,12 @@ public class Controller {
 		return this.s.updateBill(b);
 	}
 	
-	
+	//Return Latest Added Bill Details
+	@CrossOrigin("*")
+	@GetMapping("/getLatestBill/{userId}")
+	public Bill_details getLatestBill(@PathVariable int userId)
+	{
+		return this.s.getBill(userId);
+	}
 
 }
